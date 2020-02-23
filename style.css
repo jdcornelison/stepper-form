@@ -1,0 +1,166 @@
+/* Probably overkill on the Flex stuff, but sometimes a hammer solves your problem */
+html {
+  background: linear-gradient(to bottom right, rgb(238, 242, 243), rgb(142, 158, 171));
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
+  font-family: 'Nanum Gothic';
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stepper {
+  display: flex;
+  margin: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 750px;
+  background: linear-gradient(to top left, rgba(238, 242, 243, 0.5), rgba(142, 158, 171, 0.5));
+  border-radius: 45px 5px 45px 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 3px 9px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step-nav {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.prev {
+  border-radius: 45px 0 0 5px;
+  font-weight: 700;
+}
+
+.prev.nav-enabled:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+.next {
+  border-radius: 0 5px 45px 0;
+  font-weight: 700;
+}
+
+.next.nav-enabled:hover {
+  cursor: pointer;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+.step-form {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 650px;
+  height: 350px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+}
+
+.step-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 3px;
+  width: calc(100% - 6px);
+}
+
+.step-row .step-title {
+  font-weight: 700;
+  font-size: 48px;
+  margin-top: 15px;
+}
+
+.step-row .step-label {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 0;
+  justify-self: flex-start;
+}
+
+.step-row input {
+  width: 95%;
+  height: 45px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px 25px 5px 25px;
+  padding-left: 25px;
+  outline: 0;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.3)
+}
+
+input[type="number"] {
+  /* Wasn't happy with the arrows on the number field and couldn't find a simple example of overriding them a way I liked */
+  appearance: textfield;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+input[type="number"]:first-of-type {
+  border-radius: 5px 0 0 25px;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+input[type="number"]:last-of-type {
+  border-radius: 0 25px 5px 0;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* The checkboxes are 'glitchy'. You have to click on the text to get them to select instead of the parent div. */
+input[type="checkbox"] {
+  display: none;
+}
+
+.check-group {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  padding-bottom: 10px;
+}
+
+.step-checkbox {
+  display: flex;
+  flex: 1 1 0px;
+  margin: 0 3px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px 25px 5px 25px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  font-size: 18px;
+}

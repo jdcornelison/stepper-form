@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stepper Form</title>
+  <!-- Google Fonts Import - I hope this isn't cheating -->
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="stepper">
+    <div class="step-nav prev">
+      <span></span>
+    </div>
+    <form class="step-form" action="#" method="POST">
+        <!-- Step 1: Login Info -->
+        <div class="step">
+          <div class="step-row">
+            <span class="step-title">Login Info</span>
+          </div>
+          <div class="step-row">
+            <input type="text" name="userEmail" id="userEmail" placeholder="Email Address">
+          </div>
+          <div class="step-row">
+            <input type="password" name="userPassword" id="userPassword" placeholder="Choose Password">
+          </div>
+          <div class="step-row">
+            <input type="password" name="userPassConfirm" id="userPassConfirm" placeholder="Confirm Password">
+          </div>
+        </div>
+
+        <!-- Step 2: About You -->
+        <div class="step">
+          <div class="step-row">
+            <span class="step-title">About You</span>
+          </div>
+          <div class="step-row">
+            <input type="text" name="firstName" id="firstName" placeholder="First Name">
+          </div>
+          <div class="step-row">
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+          </div>
+          <div class="step-row">
+            <span class="step-label">Date of Birth</span>
+          </div>
+          <div class="step-row">
+            <input type="number" name="dobMonth" id="dobMonth" min="1" max="12" maxlength="2" placeholder="Month">
+            <input type="number" name="dobDay" id="dobDay" min="1" max="31" maxlength="2" placeholder="Day">
+            <input type="number" name="dobYear" id="dobYear" min="1800" max="2020" maxlength="4" placeholder="Year">
+          </div>
+        </div>
+
+        <!-- Step 3: Skills -->
+        <div class="step">
+          <div class="step-row">
+            <span class="step-title">Your Skills</span>
+          </div>
+          <div class="step-row">
+            <div class="check-group">
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill1" id="skill1">
+                <label for="skill1">Eyebrow Dancing</label>
+              </span>
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill2" id="skill2">
+                <label for="skill2">Walking Like a Crab</label>
+              </span>
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill3" id="skill3">
+                <label for="skill3">Hardcore Adulting</label>
+              </span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="check-group">
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill4" id="skill4">
+                <label for="skill4">Stacking Cups</label>
+              </span>
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill5" id="skill5">
+                <label for="skill5">Extreme Pen Spinning</label>
+              </span>
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill6" id="skill6">
+                <label for="skill6">Talking Backwards</label>
+              </span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="check-group">
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill7" id="skill7">
+                <label for="skill7">Speed Reading</label>
+              </span>
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill8" id="skill8">
+                <label for="skill8">Limbo Skating</label>
+              </span>
+              <span class="step-checkbox">
+                <input type="checkbox" name="skill9" id="skill9">
+                <label for="skill9">Majestic Beard Keeping</label>
+              </span>
+            </div>
+          </div>
+        </div>
+    </form>
+    <div class="step-nav nav-enabled next">
+      <span>&#187;</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
